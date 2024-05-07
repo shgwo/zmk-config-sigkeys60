@@ -1,0 +1,8 @@
+# Keys60 board configuration
+
+# Copyright (c) 2021 Polarity Works
+# SPDX-License-Identifier: MIT
+
+config BOARD_KEYS60_V0P5
+	bool "keys60 v0p5"
+	depends on SOC_NRF52840_QIAA
