@@ -141,12 +141,12 @@
 			};
 		};
 		
-	// // These aliases are provided for compatibility with samples
-	// aliases {
-	// 	ledgreen = &led_0;
-	// 	ledred   = &led_1;
-	// 	ledblue  = &led_2;
-	// };
+	// These aliases are provided for compatibility with samples
+	aliases {
+		ledgreen = &led_0;
+		ledred   = &led_1;
+		ledblue  = &led_2;
+	};
 
 /*		
 	vbatt: vbatt {
