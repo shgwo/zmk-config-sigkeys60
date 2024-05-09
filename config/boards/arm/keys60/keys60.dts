@@ -140,6 +140,12 @@
 				status = "okay";
 			};
 		};
+	// These aliases are provided for compatibility with samples
+	aliases {
+		ledgreen = &led_0;
+		ledred   = &led_1;
+		ledblue  = &led_2;
+	};
 /*		
 	vbatt: vbatt {
 		compatible = "zmk,battery-voltage-divider";
