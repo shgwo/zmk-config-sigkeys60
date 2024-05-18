@@ -27,6 +27,24 @@
 		zmk,battery = &vbatt;
 	};
 
+/*		
+	vbatt: vbatt {
+		compatible = "zmk,battery-voltage-divider";
+		label = "VBATT";
+		io-channels = <&adc 2>;
+		output-ohms = <100000>;
+		full-ohms = <(100000 + 100000)>;
+	};
+*/	
+	vbatt: vbatt {
+		compatible = "zmk,battery-voltage-divider";
+		label = "VBATT";
+		io-channels = <&adc 2>; // P0.04
+		output-ohms = <2000000>;
+		full-ohms = <(1000000 + 2000000)>;
+		power-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>; // P0.05
+	};
+
 	sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&encoder_1>;
@@ -75,11 +93,7 @@
 			, <&gpio0 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
 			;
 	};
-	ext-power {
-		compatible = "zmk,ext-power-generic";
-		label = "EXT_POWER";
-		control-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
-	};
+
 	encoder_1: encoder_1 {
 		compatible = "alps,ec11";
 		label = "ENCODER_ONE";
@@ -104,6 +118,12 @@
 		b-gpios = <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		steps = <24>;
 		status = "okay";
+	};
+
+	ext-power {
+		compatible = "zmk,ext-power-generic";
+		label = "EXT_POWER";
+		control-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
 	};
 */
 	backlight: pwmleds {
@@ -148,23 +168,6 @@
 		ledblue  = &led_2;
 	};
 
-/*		
-	vbatt: vbatt {
-		compatible = "zmk,battery-voltage-divider";
-		label = "VBATT";
-		io-channels = <&adc 2>;
-		output-ohms = <100000>;
-		full-ohms = <(100000 + 100000)>;
-	};
-*/	
-	vbatt: vbatt {
-		compatible = "zmk,battery-voltage-divider";
-		label = "VBATT";
-		io-channels = <&adc 2>; // P0.04
-		output-ohms = <2000000>;
-		full-ohms = <(1000000 + 2000000)>;
-		power-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>; // P0.05
-	};
 };
 
 &adc {
@@ -176,10 +179,6 @@
 	pinctrl-0 = <&pwm0_default>;
 	pinctrl-1 = <&pwm0_sleep>;
 	pinctrl-names = "default", "sleep";
-};
-
-&gpiote {
-	status = "okay";
 };
 
 &gpio0 {
