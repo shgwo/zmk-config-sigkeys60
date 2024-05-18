@@ -45,6 +45,12 @@
 		power-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>; // P0.05
 	};
 
+	ext-power {
+		compatible = "zmk,ext-power-generic";
+		label = "EXT_POWER";
+		control-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+	};
+
 	sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&encoder_1>;
@@ -120,11 +126,6 @@
 		status = "okay";
 	};
 
-	ext-power {
-		compatible = "zmk,ext-power-generic";
-		label = "EXT_POWER";
-		control-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
-	};
 */
 	backlight: pwmleds {
 		compatible = "pwm-leds";
