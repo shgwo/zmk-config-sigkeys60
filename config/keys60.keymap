@@ -74,6 +74,8 @@
 &trans           &trans    &trans           &mkp MB4   &mkp MB5           &trans    &trans  &kp HOME     &trans    &kp END        &trans   &trans   &trans
                  &trans    &trans           &kp LCTRL  &kp LEFT_SHIFT     &trans    &trans  &trans       &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LS(ESC) ESC>;
         };
 
         numbers {
