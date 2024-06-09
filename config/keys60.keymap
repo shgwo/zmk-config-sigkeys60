@@ -63,7 +63,7 @@
            &lt 1 ESC  &kp LGUI  &kp LALT  &lt 1 SPACE  &mt RIGHT_ALT PRINTSCREEN  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
+            sensor-bindings = <&inc_dec_kp LS(ESC) ESC>;
         };
 
         raise {
