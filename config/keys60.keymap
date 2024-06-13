@@ -87,7 +87,7 @@
         &trans       &trans    &trans         &kp N0  &kp DOT          &trans       &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PAGE_DOWN PAGE_UP>;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         device {
@@ -99,7 +99,7 @@
                 &trans                            &trans                            &trans                             &trans                            &trans                             &trans                             &trans                             &sys_reset
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
     };
 };
