@@ -75,7 +75,7 @@
                  &trans    &trans           &kp LCTRL  &kp LEFT_SHIFT     &trans    &trans  &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
+            sensor-bindings = <&inc_dec_kp DOWN UP>;
         };
 
         numbers {
