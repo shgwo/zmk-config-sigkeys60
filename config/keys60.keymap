@@ -63,7 +63,7 @@
              &lt 1 ESC  &kp LGUI  &kp LALT  &lt 1 SPACE  &mt RIGHT_ALT PRINTSCREEN  &kp LEFT  &kp DOWN  &kp RIGHT
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&inc_dec_kp ESC LS(ESC)>;
         };
 
         raise {
@@ -75,7 +75,7 @@
                  &trans    &trans           &kp LCTRL  &kp LEFT_SHIFT     &trans    &trans  &trans       &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
         numbers {
@@ -87,7 +87,7 @@
         &trans       &trans    &trans         &kp N0  &kp DOT          &trans       &trans          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(ESC) LA(LS(ESC))>;
+            sensor-bindings = <&inc_dec_kp LC(TAB) LC(LS(TAB))>;
         };
 
         device {
