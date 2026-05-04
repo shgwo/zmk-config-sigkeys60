@@ -1,5 +1,6 @@
 /*
  * Copyright (c) 2021 Megamind (megamind4089)
+ *               2026 forked sig (Toxsig) 
  *
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -102,20 +103,22 @@ int led_listener(const zmk_event_t *eh) {
     switch (profile_ev->index) {
     case 0:
         set_led(RED);
+	set_led(GREEN);
+	set_led(BLUE);
         break;
     case 1:
+        set_led(RED);
         set_led(GREEN);
         break;
     case 2:
+        set_led(RED);
         set_led(BLUE);
         break;
     case 3:
-        set_led(RED);
         set_led(GREEN);
         break;
     case 4:
         set_led(BLUE);
-        set_led(GREEN);
         break;
     default:
         break;
