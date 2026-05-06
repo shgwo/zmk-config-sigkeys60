@@ -1,6 +1,6 @@
 # zmk-config-sigkeys
 
-[[__TOC__]]
+[__TOC__]
 
 ## Getting started
 
