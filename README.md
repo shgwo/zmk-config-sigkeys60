@@ -15,7 +15,7 @@ Clone both the ZMK firmware and this configuration repository into the same pare
 
 ```bash
 git clone [https://github.com/zmkfirmware/zmk.git](https://github.com/zmkfirmware/zmk.git)
-git clone <this-repo-url> zmk-config
+git clone https://github.com/shgwo/zmk-config-sigkeys60.git zmk-config
 ```
 
 ### 2. Configure Bind Mounts
