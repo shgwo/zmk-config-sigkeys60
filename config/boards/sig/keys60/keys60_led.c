@@ -108,11 +108,11 @@ int led_listener(const zmk_event_t *eh) {
         break;
     case 1:
         set_led(RED);
-        set_led(GREEN);
+        set_led(BLUE);
         break;
     case 2:
         set_led(RED);
-        set_led(BLUE);
+        set_led(GREEN);
         break;
     case 3:
         set_led(GREEN);
