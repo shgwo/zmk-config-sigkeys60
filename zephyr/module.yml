@@ -1,3 +1,5 @@
+name: zmk-keyboard-sigkeys60
+
 build:
   settings:
     board_root: .

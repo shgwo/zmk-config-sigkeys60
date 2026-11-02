@@ -1,0 +1,17 @@
+# Keys60 OLED revision configuration
+
+# Copyright (c) 2026 Sig Stuff (shgwo)
+# SPDX-License-Identifier: MIT
+
+## SSD1306 OLED over I2C
+CONFIG_I2C=y
+CONFIG_DISPLAY=y
+CONFIG_SSD1306=y
+CONFIG_ZMK_DISPLAY=y
+CONFIG_ZMK_DISPLAY_WORK_QUEUE_DEDICATED=y
+# Blank the OLED after the keyboard has been idle.
+CONFIG_ZMK_DISPLAY_BLANK_ON_IDLE=y
+CONFIG_LV_Z_BITS_PER_PIXEL=1
+CONFIG_LV_COLOR_DEPTH_1=y
+# Use a sufficiently large render buffer for page-aligned SSD1306 updates.
+CONFIG_LV_Z_VDB_SIZE=64

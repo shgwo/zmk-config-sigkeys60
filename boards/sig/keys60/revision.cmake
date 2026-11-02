@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: MIT
 
-set(BOARD_REVISIONS "rev_ansi62_rot" "rev_ansi61" "rev_ansi61_rot" "rev_ansi64")
+set(BOARD_REVISIONS "rev_ansi62_rot" "rev_ansi62_rot_oled" "rev_ansi61" "rev_ansi61_rot" "rev_ansi64")
 if(NOT DEFINED BOARD_REVISION)
   set(BOARD_REVISION "rev_ansi62_rot")
 else()

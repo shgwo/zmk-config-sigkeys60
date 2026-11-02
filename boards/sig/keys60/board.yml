@@ -8,6 +8,7 @@ board:
     default: rev_ansi62_rot
     revisions:
       - name: rev_ansi62_rot
+      - name: rev_ansi62_rot_oled
       - name: rev_ansi61
       - name: rev_ansi61_rot
       - name: rev_ansi64

@@ -35,50 +35,67 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #define GREEN 1
 #define BLUE 2
 
+#if DT_NODE_HAS_STATUS(LED_NODE_R, okay)
 static const struct gpio_dt_spec LED_R = GPIO_DT_SPEC_GET(LED_NODE_R, gpios);
+#endif
+#if DT_NODE_HAS_STATUS(LED_NODE_G, okay)
 static const struct gpio_dt_spec LED_G = GPIO_DT_SPEC_GET(LED_NODE_G, gpios);
+#endif
+#if DT_NODE_HAS_STATUS(LED_NODE_B, okay)
 static const struct gpio_dt_spec LED_B = GPIO_DT_SPEC_GET(LED_NODE_B, gpios);
+#endif
 
 void reset_leds() {
+#if DT_NODE_HAS_STATUS(LED_NODE_R, okay)
     if (!device_is_ready(LED_R.port)) {
             return;
     }
     else
         gpio_pin_configure_dt(&LED_R, GPIO_DISCONNECTED);
+#endif
+#if DT_NODE_HAS_STATUS(LED_NODE_G, okay)
     if (!device_is_ready(LED_G.port)) {
             return;
     }
     else
         gpio_pin_configure_dt(&LED_G, GPIO_DISCONNECTED);
+#endif
+#if DT_NODE_HAS_STATUS(LED_NODE_B, okay)
     if (!device_is_ready(LED_B.port)) {
             return;
     }
     else
         gpio_pin_configure_dt(&LED_B, GPIO_DISCONNECTED);
+#endif
 }
 void set_led(size_t index) {
+#if DT_NODE_HAS_STATUS(LED_NODE_R, okay)
     if(index == RED){
-        int ret;
         if (!device_is_ready(LED_R.port)) {
             return;
         }
-        ret = gpio_pin_configure_dt(&LED_R, GPIO_OUTPUT_LOW);
+        gpio_pin_configure_dt(&LED_R, GPIO_OUTPUT_LOW);
+        return;
     }
-    else if(index == GREEN){
-        int ret;
+#endif
+#if DT_NODE_HAS_STATUS(LED_NODE_G, okay)
+    if(index == GREEN){
         if (!device_is_ready(LED_G.port)) {
             return;
         }
-        ret = gpio_pin_configure_dt(&LED_G, GPIO_OUTPUT_LOW);
+        gpio_pin_configure_dt(&LED_G, GPIO_OUTPUT_LOW);
+        return;
     }
-    else if(index == BLUE){
-        int ret;
+#endif
+#if DT_NODE_HAS_STATUS(LED_NODE_B, okay)
+    if(index == BLUE){
         if (!device_is_ready(LED_B.port)) {
             return;
         }
-        ret = gpio_pin_configure_dt(&LED_B, GPIO_OUTPUT_LOW);
+        gpio_pin_configure_dt(&LED_B, GPIO_OUTPUT_LOW);
+        return;
     }
-    return;
+#endif
 }
 
 void led_work_handler(struct k_work *work) { reset_leds(); }

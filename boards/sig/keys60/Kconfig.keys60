@@ -8,3 +8,7 @@ config BOARD_KEYS60
     imply RETAINED_MEM
     imply RETENTION
     imply RETENTION_BOOT_MODE
+
+config KEYS60_OLED_RAW_TEST
+    bool "Enable direct SSD1306 raw-pattern test"
+    default n
